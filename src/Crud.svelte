@@ -1,5 +1,5 @@
 <script>
-	import DraggableList from '@nickmanning214/svelte-draggable-list/src/DraggableList.svelte';//have to debug this
+	import DraggableList from '@nickmanning214/svelte-draggable-list/src/DraggableList.svelte';
 	
 	import SpanEditable from '@nickmanning214/svelte-span-editable/src/SpanEditable.svelte';
 	import arrayMove from 'array-move';
