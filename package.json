@@ -7,19 +7,19 @@
     "start": "sirv public"
   },
   "devDependencies": {
-    "@nickmanning214/svelte-draggable-list": "^0.8.0",
-    "@nickmanning214/svelte-span-editable": "latest",
     "@rollup/plugin-commonjs": "11.0.2",
     "@rollup/plugin-node-resolve": "^7.0.0",
-    "array-move": "latest",
+    "array-move": "^2.2.2",
     "lodash.pullat": "latest",
     "rollup": "^1.20.0",
     "rollup-plugin-livereload": "^1.0.0",
-    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-svelte": "^5.2.2",
     "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.0.0"
+    "svelte": "^3.23.0"
   },
   "dependencies": {
-    "sirv-cli": "^0.4.4"
+    "@nickmanning214/svelte-draggable-list": "latest",
+    "@nickmanning214/svelte-span-editable": "latest",
+    "sirv-cli": "^0.4.6"
   }
 }

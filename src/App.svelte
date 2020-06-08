@@ -1,6 +1,6 @@
 <script>
-	import Crud from './Index.svelte';
-	let arr = [1,2,3,4,5,6,7,8,9,9,9,9]
+	import Crud from './Crud.svelte';
+	let arr = ['One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve'];
 
 </script>
 
