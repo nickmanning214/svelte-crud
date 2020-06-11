@@ -15,11 +15,11 @@
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.2.2",
     "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.23.0"
+    "svelte": "^3.23.2"
   },
   "dependencies": {
     "@nickmanning214/svelte-draggable-list": "latest",
-    "@nickmanning214/svelte-span-editable": "latest",
+    "@nickmanning214/svelte-span-editable": "0.0.1",
     "sirv-cli": "^0.4.6"
   }
 }

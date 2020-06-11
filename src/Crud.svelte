@@ -19,6 +19,7 @@
 		currentDraggedIndex = e.detail.i;
 	}
 	function onChange(e){
+		console.log("works")
 		arr = e.detail.newData;
 	}
 	
@@ -31,13 +32,26 @@
 	function add(){
 		arr = [...arr,'New'];
 	}
+
+	let isDragging = false;
+
+	function onStartDrag(){
+		isDragging = true;
+	}
+
+	function onFinishDrag(e){
+		isDragging = false;
+		arr = e.detail.data;
+	}
 	
 </script>
 
-<DraggableList data={arr} let:item let:index on:mousedown={onMouseDown} on:change={onChange}>
-	<SpanEditable on:edited={onEdit.bind(null,item,index)}>{item}</SpanEditable>
-	<span on:click={del.bind(null,index)}>[Del]</span>
+<height>
+<DraggableList data={arr} let:item let:index on:mousedown={onMouseDown} on:change={onChange} on:startDrag={onStartDrag} on:finishDrag={onFinishDrag}>
+	<SpanEditable on:edited={onEdit.bind(null,item,index)} disabled={isDragging}>{item}</SpanEditable>
+	<span on:click={()=>{del(index)}}>[Del]</span>
 </DraggableList>
+</height>
 <button on:click={add}>
 	Add
 </button>
@@ -45,3 +59,9 @@
 [{arr}]
 currentChangeIndex: {from} {to}
 </div>
+<style>
+height{
+	display:block;
+	height:500px;
+}
+</style>
