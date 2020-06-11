@@ -64,8 +64,5 @@
 
 
 <style>
-height{
-	display:block;
-	height:500px;
-}
+
 </style>
