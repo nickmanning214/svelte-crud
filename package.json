@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@nickmanning214/svelte-draggable-list": "latest",
-    "@nickmanning214/svelte-span-editable": "0.0.1",
+    "@nickmanning214/svelte-span-editable": "latest",
     "sirv-cli": "^0.4.6"
   }
 }
