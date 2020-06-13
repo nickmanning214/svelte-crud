@@ -9,8 +9,6 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "11.0.2",
     "@rollup/plugin-node-resolve": "^7.0.0",
-    "array-move": "^2.2.2",
-    "lodash.pullat": "latest",
     "rollup": "^1.20.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.2.2",
@@ -20,6 +18,8 @@
   "dependencies": {
     "@nickmanning214/svelte-draggable-list": "latest",
     "@nickmanning214/svelte-span-editable": "latest",
-    "sirv-cli": "^0.4.6"
+    "sirv-cli": "^0.4.6",
+    "array-move": "^2.2.2",
+    "lodash.pullat": "latest"
   }
 }
