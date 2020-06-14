@@ -10,8 +10,19 @@
 <events>
 	changeCount: {changeCount}
 </events>
-<Crud arr={arr} on:change={onChange}></Crud>
-
+<main>
+	<Crud arr={arr} on:change={onChange}></Crud>
+</main>
 <div>
 	[{arr}]
 </div>
+<style>
+	events{
+		height:30px;
+		border-bottom:1px solid black;
+		display:block;
+	}
+	main{
+		position:relative;
+	}
+</style>

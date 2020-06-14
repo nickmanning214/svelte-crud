@@ -17,9 +17,9 @@
   },
   "dependencies": {
     "@nickmanning214/svelte-draggable-list": "latest",
-    "@nickmanning214/svelte-span-editable": "latest",
-    "sirv-cli": "^0.4.6",
+    "@nickmanning214/svelte-span-editable": "0.0.3",
     "array-move": "^2.2.2",
-    "lodash.pullat": "latest"
+    "lodash.pullat": "latest",
+    "sirv-cli": "^0.4.6"
   }
 }
