@@ -1,6 +1,6 @@
 {
   "name": "@nickmanning214/svelte-crud",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
