@@ -68,10 +68,22 @@
 		}
 	}
 	
+	function onMouseupSpanEditable(item,index,e){
+		dispatch('clickItem',{
+			item,index
+		})
+	}
+
+	function onLongPress(){
+		console.log('lp')
+	}
+
 </script>
 
 <DraggableList data={arr} let:item let:index on:startDrag={onStartDrag} on:finishDrag={onFinishDrag}>
-	<SpanEditable on:edited={onEdit.bind(null,item,index)} disabled={isDragging}>{item}</SpanEditable>
+	<SpanEditable 
+		on:click={onMouseupSpanEditable.bind(null,item,index)}
+		on:edited={onEdit.bind(null,item,index)} disabled={isDragging}>{item}</SpanEditable>
 	<span on:mouseup={onClickDelete.bind(null,index)}>[Del]</span>
 </DraggableList>
 <button on:click={add}>
