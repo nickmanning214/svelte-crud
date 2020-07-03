@@ -40,8 +40,9 @@
 
 	
 	function del(index){
-		pullAt(arr,index);
+		const deleted = pullAt(arr,index)[0];
 		arr=arr;
+		dispatch('delete',{deleted,index});
 		dispatch('change',{arr})
 	}
 
@@ -51,6 +52,7 @@
 	
 	function add(){
 		arr = [...arr,'New'];
+		dispatch('add',{item:'New',index:arr.length-1});
 		dispatch('change',{arr})
 	}
 
@@ -64,7 +66,9 @@
 		isDragging = false;
 		if (!arraysEqual(arr,e.detail.data)){
 			arr = e.detail.data;
+			dispatch('reorder',{arr,startIndex:e.detail.startIndex,finishIndex:e.detail.finishIndex,});
 			dispatch('change',{arr})
+
 		}
 	}
 	
