@@ -85,9 +85,13 @@
 </script>
 
 <DraggableList data={arr} let:item let:index on:startDrag={onStartDrag} on:finishDrag={onFinishDrag}>
-	<SpanEditable 
-		on:click={onMouseupSpanEditable.bind(null,item,index)}
-		on:edited={onEdit.bind(null,item,index)} disabled={isDragging}>{item}</SpanEditable>
+	<slot item={item}>
+
+		<!--default input-->
+		<SpanEditable 
+			on:click={onMouseupSpanEditable.bind(null,item,index)}
+			on:edited={onEdit.bind(null,item,index)} disabled={isDragging}>{item}</SpanEditable>
+	</slot>
 	<span on:mouseup={onClickDelete.bind(null,index)}>[Del]</span>
 </DraggableList>
 <button on:click={add}>

@@ -70,7 +70,17 @@
 		on:delete={onDelete}
 		on:add={onAdd}
 		on:reorder={onReorder}
-	></Crud>
+		
+		let:item={item}
+	
+	>
+		<select>
+			<option>{item}!!!</option>
+			<option>B</option>
+			<option>C</option>
+		</select>
+		[Drag]
+	</Crud>
 </main>
 <div>
 	[{arr}]
