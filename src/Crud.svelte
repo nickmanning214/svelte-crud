@@ -85,7 +85,7 @@
 </script>
 
 <DraggableList data={arr} let:item let:index on:startDrag={onStartDrag} on:finishDrag={onFinishDrag}>
-	<slot item={item}>
+	<slot item={item} index={index}>
 
 		<!--default input-->
 		<SpanEditable 
