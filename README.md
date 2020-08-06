@@ -1,3 +1,26 @@
+# API
+
+Pass an array in `arr` prop and render it with `let:item`. For example:
+
+```
+  <Crud arr={arr} let:item>
+    <div>{item.city}, {item.state}</div>
+  </Crud>
+```
+
+ * `let:index` is also available
+ * events include 
+ * * `change` (arr), 
+ * * `delete` (deleted, index), 
+ * * `add` (item, index),
+ * * `reorder` (arr, startIndex, finishIndex). The `detail` prop on the event object 
+ 
+ The `change` event is fired when you edit, delete, add, or reorder.
+ 
+ There is no event specific to editing. This should be a todo item.
+ 
+ There is also `clickItem` but it seems deprecated.
+
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
