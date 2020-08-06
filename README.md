@@ -17,7 +17,7 @@ Pass an array in `arr` prop and render it with `let:item`. For example:
  
  The `change` event is fired when you edit, delete, add, or reorder.
  
- There is no event specific to editing. This should be a todo item.
+ There is no event specific to editing. ~This should be a todo item.~ This is because editing an item takes place in the slot of Crud and is not intrinsic to the component.
  
  There is also `clickItem` but it seems deprecated.
 
