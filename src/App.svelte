@@ -10,7 +10,8 @@
 	let lastReordered = null;
 	let clickedItem = null;
 	let clickedIndex = null;
-
+	let editedIndex = null;
+	let editCount = 0;
 
 	function onChange(e){
 		changeCount++;
@@ -32,11 +33,13 @@
 		reorderCount++;
 	}
 
-
-	function onClickItem(e){
-		clickedItem = e.detail.item;
-		clickedIndex = e.detail.index
+	function onEdit(e){
+		lastEdited = e.detail;
+		editCount++;
 	}
+
+
+	
 
 	function onClickLastAdded(){
 		console.log(lastAdded)
@@ -47,6 +50,13 @@
 	function onClickLastReordered(){
 		console.log(lastReordered)
 	}
+
+	function selectOnChange(item,index,e){
+		console.log('fired',item,index,e)
+		arr[index] = e.target.value;
+		arr = arr;
+	}
+
 </script>
 <events>
 	<event>
@@ -61,25 +71,32 @@
 	<event>
 	reorderCount: {reorderCount} <button on:click={onClickLastReordered}>Log last reordered</button>
 	</event>
+	<event>
+	editCount: {editCount} <button on:click={onClickLastEdited}>Log last edited</button>
+	</event>
 </events>
 <main>
+	TODO: scrolling messes this up
 	<Crud 
 		arr={arr} 
 		on:change={onChange}
-		on:clickItem={onClickItem}
 		on:delete={onDelete}
 		on:add={onAdd}
 		on:reorder={onReorder}
+		on:edit={onEdit}
 		
 		let:item={item}
+		let:index={index}
 	
-	>
-		<select>
-			<option>{item}!!!</option>
-			<option>B</option>
-			<option>C</option>
+>
+	<!--this is messed up logic. You can't explicitly say {item} as an option and then also bind the value-->
+		<select value={item} on:change={selectOnChange.bind(null,item,index)}>
+			<option>{item}</option>
+			<option>{item}!</option>
+			<option>{item}?</option>
 		</select>
 		[Drag]
+		
 	</Crud>
 </main>
 <div>

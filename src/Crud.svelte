@@ -23,16 +23,22 @@
 	import DraggableList from '@nickmanning214/svelte-draggable-list/src/DraggableList.svelte';
 
 	import SpanEditable from '@nickmanning214/svelte-span-editable/src/SpanEditable.svelte';
+
+	import enableContentEditable from '@nickmanning214/svelte-action-enable-content-editable/src/enableContentEditable.js'
+
 	import arrayMove from 'array-move';
 	import pullAt from 'lodash.pullat';
 
     let onEditInfo;
 	export let arr;
-	
+	export let defaultItem = function(){
+		return 'New';
+	}
 	
 	function onEdit(item,index,e){
 		arr[index] = e.detail.value
 		arr = arr;
+		dispatch('edit',{item:arr[index],index});
 		dispatch('change',{arr})
 	}
 	
@@ -51,8 +57,9 @@
 	}
 	
 	function add(){
-		arr = [...arr,'New'];
-		dispatch('add',{item:'New',index:arr.length-1});
+		const newItem = defaultItem();
+		arr = [...arr,newItem];
+		dispatch('add',{item:newItem,index:arr.length-1});
 		dispatch('change',{arr})
 	}
 
@@ -72,11 +79,7 @@
 		}
 	}
 	
-	function onMouseupSpanEditable(item,index,e){
-		dispatch('clickItem',{
-			item,index
-		})
-	}
+	
 
 	function onLongPress(){
 		console.log('lp')
@@ -88,9 +91,8 @@
 	<slot item={item} index={index}>
 
 		<!--default input-->
-		<SpanEditable 
-			on:click={onMouseupSpanEditable.bind(null,item,index)}
-			on:edited={onEdit.bind(null,item,index)} disabled={isDragging}>{item}</SpanEditable>
+		<span use:enableContentEditable on:disable={onEdit.bind(null,item,index)}>{item}</span> 
+			
 	</slot>
 	<span on:mouseup={onClickDelete.bind(null,index)}>[Del]</span>
 </DraggableList>
