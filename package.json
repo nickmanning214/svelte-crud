@@ -13,11 +13,11 @@
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.2.3",
     "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.24.0"
+    "svelte": "^3.24.1"
   },
   "dependencies": {
     "@nickmanning214/svelte-action-enable-content-editable": "latest",
-    "@nickmanning214/svelte-draggable-list": "latest",
+    "@nickmanning214/svelte-draggable-list": "^0.9.0",
     "@nickmanning214/svelte-span-editable": "latest",
     "array-move": "^2.2.2",
     "lodash.pullat": "latest",
