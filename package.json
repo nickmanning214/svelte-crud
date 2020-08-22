@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@nickmanning214/svelte-action-enable-content-editable": "latest",
-    "@nickmanning214/svelte-draggable-list": "^0.9.0",
+    "@nickmanning214/svelte-draggable-list": "^0.9.1",
     "@nickmanning214/svelte-span-editable": "latest",
     "array-move": "^2.2.2",
     "lodash.pullat": "latest",
