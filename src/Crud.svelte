@@ -96,7 +96,7 @@
 	</slot>
 	<span on:mouseup={onClickDelete.bind(null,index)}>[Del]</span>
 </DraggableList>
-<button on:click={add}>
+<button on:click={add} class="add">
 	Add
 </button>
 
